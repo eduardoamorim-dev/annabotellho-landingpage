@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import annaBotelho from '../assets/anna-botelho.png';
+import avatar from '../assets/avatar.jpg';
 
 const Hero = () => {
   const container = useRef(null);
@@ -176,7 +178,7 @@ const Hero = () => {
             {/* AQUI: Adicionei 'lg:translate-y-16' para empurrar a foto para baixo */}
             <div className="hero-img-container relative z-10 w-full lg:absolute lg:bottom-0 lg:right-[-5%] lg:w-[130%] max-w-[800px] lg:translate-y-16">
                 <img 
-                    src="/src/assets/anna-botelho.png" 
+                    src={annaBotelho} 
                     alt="Nutricionista Anna Botelho" 
                     className="w-full h-auto object-contain drop-shadow-2xl pointer-events-none"
                     style={{ maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)' }}
@@ -191,7 +193,7 @@ const Hero = () => {
                 >
                     <div className="relative">
                       <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-bg">
-                          <img src="/src/assets/avatar.jpg" alt="Avatar" className="w-full h-full object-cover"/>
+                          <img src={avatar} alt="Avatar" className="w-full h-full object-cover"/>
                       </div>
                       <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
                     </div>

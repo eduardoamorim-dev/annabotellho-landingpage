@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLenis } from '@studio-freight/react-lenis';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -40,7 +41,7 @@ const Navbar = () => {
         <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="flex items-center gap-3 cursor-pointer group">
           <div className="w-35 h-35 rounded-full flex items-center justify-center">
             {/* Ícone ou Logo */}
-            <span className="relative z-10 group-hover:scale-110 transition-transform"><img src="/src/assets/logo.png" alt="Logo Anna Botelho" className="w-10 h-10" /></span> 
+            <span className="relative z-10 group-hover:scale-110 transition-transform"><img src={logo} alt="Logo Anna Botelho" className="w-10 h-10" /></span> 
           </div>
           <span className="font-serif font-bold text-xl tracking-tight text-brand-dark hidden md:block">
             Anna Botelho<span className="text-brand-accent">.</span>
