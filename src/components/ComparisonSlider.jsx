@@ -47,7 +47,7 @@ const ComparisonSlider = ({ before, after, name, result, time }) => {
       {/* O Slider em si */}
       <div 
         ref={sliderRef}
-        className="relative w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden cursor-col-resize select-none group shadow-2xl shadow-black/50"
+        className="relative w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden cursor-col-resize select-none group"
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
         onMouseDown={handleMouseDown}

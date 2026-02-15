@@ -10,9 +10,10 @@ const ScrollToTop = () => {
     const checkSection = () => {
       setVisible(window.scrollY > 400);
       
-      // Detecta se está em seção escura
+      // Detecta se está em seção escura - ajustado para mobile e desktop
       const darkSections = document.querySelectorAll('#metodologia, #historias');
-      const buttonY = window.innerHeight - 80; // posição do botão na tela
+      const isMobile = window.innerWidth < 768;
+      const buttonY = window.innerHeight - (isMobile ? 48 : 80); // posição do botão na tela
       
       let inDark = false;
       darkSections.forEach(section => {
@@ -25,8 +26,12 @@ const ScrollToTop = () => {
     };
     
     window.addEventListener('scroll', checkSection);
+    window.addEventListener('resize', checkSection);
     checkSection();
-    return () => window.removeEventListener('scroll', checkSection);
+    return () => {
+      window.removeEventListener('scroll', checkSection);
+      window.removeEventListener('resize', checkSection);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -40,7 +45,7 @@ const ScrollToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 ${
+      className={`fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 w-12 h-12 md:w-14 md:h-14 rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
       } ${
         isDarkSection 

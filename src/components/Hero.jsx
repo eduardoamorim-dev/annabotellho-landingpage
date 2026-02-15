@@ -90,7 +90,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="inicio" ref={container} className="relative w-full min-h-screen lg:min-h-[110vh] flex items-center bg-brand-bg overflow-hidden pt-24 pb-8 lg:pt-20 lg:pb-0">
+    <section id="inicio" ref={container} className="relative z-20 w-full min-h-screen lg:min-h-[110vh] flex items-center bg-brand-bg overflow-hidden pt-24 pb-8 lg:pt-20 lg:pb-0">
       
       {/* Decoração de Fundo */}
       <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#D4E6C8] rounded-full blur-[120px] opacity-40 pointer-events-none mix-blend-multiply"></div>
@@ -114,14 +114,14 @@ const Hero = () => {
           <h1 className="text-[3.5rem] md:text-[5rem] lg:text-[6rem] leading-[0.95] text-brand-dark font-sans tracking-tight mb-8">
             
             {/* Linha 1 */}
-            <div className="overflow-hidden pb-3"> {/* Padding para não cortar descidas */}
+            <div style={{ clipPath: 'inset(-20% -10% -20% -10%)' }}>
               <span className="hero-line-inner block font-bold">
                 Construa o corpo
               </span>
             </div>
             
             {/* Linha 2 */}
-            <div className="overflow-hidden pb-3">
+            <div style={{ clipPath: 'inset(-20% -10% -20% -10%)' }}>
               <div className="hero-line-inner block">
                 <span className="font-bold">que você </span>
                 <span className="font-serif italic font-normal text-brand-accent pr-4">deseja.</span>
@@ -129,7 +129,7 @@ const Hero = () => {
             </div>
             
             {/* Linha 3 */}
-            <div className="overflow-hidden mt-2 pb-3">
+            <div className="mt-2" style={{ clipPath: 'inset(-20% -10% -20% -10%)' }}>
                <span className="hero-line-inner block text-2xl md:text-4xl lg:text-[2.8rem] font-medium leading-tight text-brand-dark/80 max-w-2xl">
                 Sem sofrer, comendo o que gosta!
                </span>
