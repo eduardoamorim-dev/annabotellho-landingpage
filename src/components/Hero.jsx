@@ -90,7 +90,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="inicio" ref={container} className="relative w-full min-h-[110vh] flex items-center bg-brand-bg overflow-hidden pt-20">
+    <section id="inicio" ref={container} className="relative w-full min-h-screen lg:min-h-[110vh] flex items-center bg-brand-bg overflow-hidden pt-24 pb-8 lg:pt-20 lg:pb-0">
       
       {/* Decoração de Fundo */}
       <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#D4E6C8] rounded-full blur-[120px] opacity-40 pointer-events-none mix-blend-multiply"></div>
@@ -173,33 +173,33 @@ const Hero = () => {
         </div>
 
         {/* --- COLUNA DIREITA (Imagem Grande) --- */}
-        <div className="lg:col-span-5 relative h-[60vh] lg:h-full flex items-end justify-center lg:justify-end mt-12 lg:mt-0">
+        <div className="lg:col-span-5 relative h-auto lg:h-full flex items-end justify-center lg:justify-end mt-4 lg:mt-0">
             
-            {/* AQUI: Adicionei 'lg:translate-y-16' para empurrar a foto para baixo */}
-            <div className="hero-img-container relative z-10 w-full lg:absolute lg:bottom-0 lg:right-[-5%] lg:w-[130%] max-w-[800px] lg:translate-y-16">
+            {/* Container da imagem */}
+            <div className="hero-img-container relative z-10 w-[280px] sm:w-[350px] lg:w-[130%] lg:max-w-[800px] lg:absolute lg:bottom-0 lg:right-[-5%] lg:translate-y-16">
                 <img 
                     src={annaBotelho} 
                     alt="Nutricionista Anna Botelho" 
                     className="w-full h-auto object-contain drop-shadow-2xl pointer-events-none"
-                    style={{ maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)' }}
+                    style={{ maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }}
                 />
 
-                {/* Badge ajustado: bottom-10 e mais alinhado à esquerda da foto */}
+                {/* Badge ajustado para mobile e desktop */}
                 <a
                   href="https://www.instagram.com/nutriannabotelho/"
                   target="_blank"
                   rel="noreferrer"
-                  className="hero-badge absolute bottom-10 -left-4 md:-left-12 bg-white/90 backdrop-blur-md p-4 pr-6 rounded-2xl flex items-center gap-4 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.15)] border border-white z-50 animate-float cursor-pointer [&_*]:pointer-events-none"
+                  className="hero-badge absolute bottom-[15%] sm:bottom-[12%] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-auto lg:-left-12 lg:bottom-10 bg-white/90 backdrop-blur-md p-2 sm:p-3 lg:p-4 pr-3 sm:pr-4 lg:pr-6 rounded-xl lg:rounded-2xl flex items-center gap-2 sm:gap-3 lg:gap-4 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.15)] border border-white z-50 animate-float cursor-pointer [&_*]:pointer-events-none"
                 >
                     <div className="relative">
-                      <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-bg">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-full overflow-hidden border-2 border-brand-bg">
                           <img src={avatar} alt="Avatar" className="w-full h-full object-cover"/>
                       </div>
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
+                      <div className="absolute -bottom-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-green-500 border-2 border-white rounded-full"></div>
                     </div>
                     <div className="flex flex-col">
-                        <span className="font-bold text-brand-dark text-lg leading-none mb-1">Anna Botelho</span>
-                        <span className="text-xs text-brand-dark/60 font-medium uppercase tracking-wider">@nutriannabotelho</span>
+                        <span className="font-bold text-brand-dark text-xs sm:text-sm lg:text-lg leading-none mb-0.5 lg:mb-1">Anna Botelho</span>
+                        <span className="text-[9px] sm:text-[10px] lg:text-xs text-brand-dark/60 font-medium uppercase tracking-wider">@nutriannabotelho</span>
                     </div>
                 </a>
             </div>

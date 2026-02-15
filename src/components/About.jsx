@@ -11,20 +11,27 @@ const About = () => {
   const imageRef = useRef(null);
 
   useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: container.current,
-      start: "top top",
-      end: "bottom bottom",
-      pin: imageRef.current, // Fixa a imagem
-      scrub: true
+    // Só aplica o pin no desktop (md: 768px+)
+    const mm = gsap.matchMedia();
+    
+    mm.add("(min-width: 768px)", () => {
+      ScrollTrigger.create({
+        trigger: container.current,
+        start: "top top",
+        end: "bottom bottom",
+        pin: imageRef.current,
+        scrub: true
+      });
     });
+
+    return () => mm.revert();
   }, { scope: container });
 
   return (
     <section id="manifesto" ref={container} className="relative w-full flex flex-col md:flex-row bg-brand-bg">
       
       {/* Lado Esquerdo (Sticky Imagem) */}
-      <div ref={imageRef} className="w-full md:w-1/2 h-screen bg-brand-dark relative overflow-hidden flex items-center justify-center">
+      <div ref={imageRef} className="w-full md:w-1/2 h-[50vh] md:h-screen bg-brand-dark relative overflow-hidden flex items-center justify-center">
         {/* Placeholder artistico para outra foto ou textura */}
         <div
           className="absolute inset-0 opacity-65 mix-blend-overlay bg-cover bg-center grayscale"
